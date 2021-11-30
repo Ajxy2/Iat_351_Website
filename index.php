@@ -21,7 +21,7 @@ if(mysqli_connect_errno()) {
 <html lang="en">
   <head>
     <title>Video Game Review</title>
-	 <link  rel="stylesheet"  href="style5.css">
+	 <link  rel="stylesheet"  href="style.css">
   </head>
   <header>
   <h1>Video Game Reviews<h1>
