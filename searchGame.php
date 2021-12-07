@@ -27,7 +27,7 @@ if(mysqli_connect_errno()) {
 <html lang="en">
   <head>
     <title>Video Game Review</title>
-	 <link  rel="stylesheet"  href="style.css">
+	 <link  rel="stylesheet"  href="css/style.css">
   </head>
   <header>
   <h1>Website Review<h1>
@@ -35,8 +35,9 @@ if(mysqli_connect_errno()) {
 		<ul>
 			<li><a href="index.php">Home</a></li>
 			<li><a href="searchGame.php">Games</a></li>
-			<li><a href="game.php">Login</a></li>
-			<li><a href="game.php">Sign Up</a></li>
+			<li><a href="login.php">Login</a></li>
+			<li><a href="register.php">Sign Up</a></li>
+			<li><a href="settings.php">Settings</a></li>
 		</ul>
 	</nav>
 	</header>

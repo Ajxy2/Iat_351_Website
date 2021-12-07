@@ -21,7 +21,12 @@ if (isset($_POST['login_user'])) {
 	}
 
 	if ($nameErr == "" && $passErr == "") {
+<<<<<<< Updated upstream
 		$query = "SELECT * FROM member WHERE username='$username' AND password = '$password'";
+=======
+		$pass_secure = md5($password);
+		$query = "SELECT * FROM member WHERE username='$username' AND password = '$pass_secure'";
+>>>>>>> Stashed changes
 		$result = mysqli_query($db, $query);
 		if (mysqli_num_rows($result) == 1) {
 			$_SESSION['username'] = $username;
@@ -40,7 +45,11 @@ if (isset($_POST['login_user'])) {
 	<head>
 		<meta charset="utf-8">
 		<title>LOGIN</title>
+<<<<<<< Updated upstream
 		<link rel="stylesheet" type="text/css" href="style.css">
+=======
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+>>>>>>> Stashed changes
 	</head>
 
 	<body>

@@ -16,6 +16,11 @@ if (isset($_POST['reg_user'])) {
 	}
 	if (empty($email)) {
 		$emailErr = "Email is required";
+<<<<<<< Updated upstream
+=======
+	} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$emailErr = "Invalid email format";
+>>>>>>> Stashed changes
 	}
 	if (empty($pass1)) {
 		$passErr = "Password is required";
@@ -37,7 +42,12 @@ if (isset($_POST['reg_user'])) {
 	}
 
 	if ($emailErr == "" && $nameErr == "" && $passErr == "") {
+<<<<<<< Updated upstream
 		$query = "INSERT INTO member (username, email, password) VALUES ('$username', '$email', '$pass1')";
+=======
+		$pass_secure = md5($pass1);
+		$query = "INSERT INTO member (username, email, password) VALUES ('$username', '$email', '$pass_secure')";
+>>>>>>> Stashed changes
 		mysqli_query($db, $query);
 		$_SESSION['username'] = $username;
 		$_SESSION['success'] = "You are now logged in";
@@ -52,7 +62,11 @@ if (isset($_POST['reg_user'])) {
 	<head>
 		<meta charset="utf-8">
 		<title>REGISTER</title>
+<<<<<<< Updated upstream
 		<link rel="stylesheet" type="text/css" href="style.css">
+=======
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+>>>>>>> Stashed changes
 	</head>
 
 	<body>
@@ -63,7 +77,11 @@ if (isset($_POST['reg_user'])) {
 		<form action="register.php" method="post">
 			<label>Email</label>
 			<input type="text" name="email" placeholder="Email">
+<<<<<<< Updated upstream
 			<span class="error"><?php echo $emailErr ?></span> 
+=======
+			<span style="color:red"><?php echo $emailErr ?></span> 
+>>>>>>> Stashed changes
 			<br>
 
 			<label>User Name</label>
