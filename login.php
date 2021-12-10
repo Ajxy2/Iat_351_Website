@@ -22,7 +22,12 @@ if (isset($_POST['login_user'])) {
 
 	if ($nameErr == "" && $passErr == "") {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		$query = "SELECT * FROM member WHERE username='$username' AND password = '$password'";
+=======
+		$pass_secure = md5($password);
+		$query = "SELECT * FROM member WHERE username='$username' AND password = '$pass_secure'";
+>>>>>>> Stashed changes
 =======
 		$pass_secure = md5($password);
 		$query = "SELECT * FROM member WHERE username='$username' AND password = '$pass_secure'";
@@ -39,14 +44,21 @@ if (isset($_POST['login_user'])) {
 }
 
 ?>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>LOGIN</title>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		<link rel="stylesheet" type="text/css" href="style.css">
+=======
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+>>>>>>> Stashed changes
 =======
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 >>>>>>> Stashed changes

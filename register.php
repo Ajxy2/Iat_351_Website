@@ -17,6 +17,11 @@ if (isset($_POST['reg_user'])) {
 	if (empty($email)) {
 		$emailErr = "Email is required";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+	} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$emailErr = "Invalid email format";
+>>>>>>> Stashed changes
 =======
 	} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		$emailErr = "Invalid email format";
@@ -43,7 +48,12 @@ if (isset($_POST['reg_user'])) {
 
 	if ($emailErr == "" && $nameErr == "" && $passErr == "") {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		$query = "INSERT INTO member (username, email, password) VALUES ('$username', '$email', '$pass1')";
+=======
+		$pass_secure = md5($pass1);
+		$query = "INSERT INTO member (username, email, password) VALUES ('$username', '$email', '$pass_secure')";
+>>>>>>> Stashed changes
 =======
 		$pass_secure = md5($pass1);
 		$query = "INSERT INTO member (username, email, password) VALUES ('$username', '$email', '$pass_secure')";
@@ -63,7 +73,11 @@ if (isset($_POST['reg_user'])) {
 		<meta charset="utf-8">
 		<title>REGISTER</title>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		<link rel="stylesheet" type="text/css" href="style.css">
+=======
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+>>>>>>> Stashed changes
 =======
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 >>>>>>> Stashed changes
@@ -78,7 +92,11 @@ if (isset($_POST['reg_user'])) {
 			<label>Email</label>
 			<input type="text" name="email" placeholder="Email">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			<span class="error"><?php echo $emailErr ?></span> 
+=======
+			<span style="color:red"><?php echo $emailErr ?></span> 
+>>>>>>> Stashed changes
 =======
 			<span style="color:red"><?php echo $emailErr ?></span> 
 >>>>>>> Stashed changes
