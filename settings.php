@@ -3,9 +3,9 @@
 	session_start();
 
 <<<<<<< Updated upstream
-	$birth_date = $gender = $bio = "";
+	$birth_date = $gender = $bio = $genre = "";
 =======
-	$birth_date = $gen = $bio = "";
+	$birth_date = $gen = $bio = $genre ="";
 >>>>>>> Stashed changes
 
 	$db = mysqli_connect('localhost', 'root', '', 'videogame');
@@ -36,6 +36,13 @@
 		}
 		if (!empty($bio)) { 
 			$query = "UPDATE member SET biography = '$bio' WHERE username = 'a']'";
+		}
+		
+		if (!empty($genre)) { 
+			$query = "INSERT INTO member_pref_genres (username, genre) VALUES ('$username', '$genre')" ;
+		}
+			
+			
 =======
 	if (isset($_POST['logout'])) {
 		session_unset();
@@ -60,6 +67,11 @@
 		if (!empty($bio)) { 
 			$query = "UPDATE member SET biography = '$bio' WHERE username = '$user'";
 >>>>>>> Stashed changes
+			mysqli_query($db, $query);
+		}
+		
+		if (!empty($genre)) { 
+		$query = "INSERT INTO member_pref_genres (username, genre) VALUES ('$user', '$genre')" ;
 			mysqli_query($db, $query);
 		}
 	}
